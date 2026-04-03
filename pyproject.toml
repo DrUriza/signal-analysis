@@ -3,12 +3,12 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "signal_freq_analysis"
+name = "signal_analysis"
 version = "0.1.0"
 description = "Reusable signal processing library for Fourier, Wavelet, TDA and Micro-Doppler."
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["numpy>=1.24"]
+dependencies = ["numpy>=1.24", "pandas>=2.0"]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
