@@ -12,6 +12,7 @@ Current stable public API:
 
 Some submodules are still placeholders and can be expanded incrementally.
 """
+from signal_analysis.filters.kalman import (kalman_filter_1d, kalman_filter_multivariate, kalman_filter_ohlc) 
 
 from signal_analysis.indicators import (
     compute_adx,
@@ -90,4 +91,6 @@ __all__ = [
     "cross_level_down",
     "series_to_ohlc_windows",
     "compute_fft_magnitude",
-]
+    "kalman_filter_1d",
+    "kalman_filter_multivariate",
+    "kalman_filter_ohlc"]

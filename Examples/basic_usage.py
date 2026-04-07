@@ -10,6 +10,21 @@ from signal_analysis.indicators import (
 from signal_analysis.radar.micro_doppler import micro_doppler_features_placeholder
 from signal_analysis.transforms.fourier import compute_fft_magnitude
 from signal_analysis.transforms.wavelet import wavelet_energy_placeholder
+import pandas as pd
+from signal_analysis.filters.kalman import kalman_filter_ohlc, kalman_filter_1d
+
+x = [1, 2, 3, 2, 4, 5, 4]
+y = kalman_filter_1d(x)
+print(y)
+df = pd.DataFrame({
+    "open":  [1, 2, 3, 4, 5],
+    "high":  [2, 3, 4, 5, 6],
+    "low":   [0, 1, 2, 3, 4],
+    "close": [1.5, 2.5, 3.5, 4.5, 5.5],
+})
+
+filtered = kalman_filter_ohlc(df)
+print(filtered)
 
 signal = [0.0, 1.0, 0.0, -1.0, 0.5, 0.0, -0.5, 0.0, 1.0, 0.5, -0.2, 0.3]
 
